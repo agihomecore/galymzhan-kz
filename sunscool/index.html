@@ -11,7 +11,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SUNScool · ИИ в классе без интернета</title>
-<meta name="description" content="SUNScool — локальный ИИ для школ Казахстана: сервер у учителя или в серверной, терминалы у учеников. Казахский и русский. Данные школы остаются в школе.">
+<meta name="description" content="SUNScool — локальный ИИ для школ Казахстана: отдельный сервер в школе, место учителя и места учеников. Казахский и русский. Данные школы остаются в школе.">
 <link rel="canonical" href="https://galymzhan.kz/sunscool/">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -37,7 +37,7 @@ h2{font-size:28px;font-weight:700;margin-bottom:8px}
 .card .k{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--g);font-weight:600;margin-bottom:8px}
 .card p,.card li{color:var(--mute);font-size:15.5px}
 .card ul{padding-left:18px;margin-top:8px}
-.scheme{display:grid;grid-template-columns:1fr 60px 1fr;align-items:center;gap:10px}
+.scheme{display:grid;grid-template-columns:1fr 44px 1fr 44px 1fr;align-items:center;gap:10px}
 .node{background:#fff;border:2px solid var(--g);border-radius:16px;padding:20px}
 .node.dark{border-color:var(--deep)}
 .node b{display:block;font-size:18px;margin-bottom:6px}
@@ -68,12 +68,15 @@ footer b{color:var(--ink)} a{color:var(--g)}
 
 <section><div class="wrap">
   <h2>Как устроено</h2>
-  <p class="lead">Один установщик, два режима. При установке выбираете: сервер или терминал.</p>
+  <p class="lead">Один установщик, три роли. При установке выбираете: 1 — Сервер, 2 — Место учителя, 3 — Место ученика.</p>
   <div class="scheme">
-    <div class="node dark"><b>Сервер SUNScool</b><span>В серверной или на столе учителя. Здесь работает модель ИИ. Учитель видит класс, готовит задания, включает и выключает доступ.</span></div>
+    <div class="node"><b>Место ученика</b><span>Компьютер ученика. Модель не ставится — подключается к серверу. Детский режим: только урок, без посторонних сайтов.</span></div>
     <div class="arrow">⇄</div>
-    <div class="node"><b>Терминалы учеников</b><span>Обычные школьные компьютеры. Модель на них не ставится — только окно урока. Работают через школьную сеть, без выхода в интернет.</span></div>
+    <div class="node dark"><b>Сервер SUNScool</b><span>Отдельный компьютер в серверной или в кабинете информатики. Здесь работает модель ИИ. Включён до начала уроков.</span></div>
+    <div class="arrow">⇄</div>
+    <div class="node"><b>Место учителя</b><span>Компьютер учителя. Модель не ставится — подключается к серверу. Помогает готовить уроки, задания и объяснения.</span></div>
   </div>
+  <p style="margin-top:18px">Брошюра (PDF): <a href="SUNScool_RU.pdf">Русский</a> · <a href="SUNScool_KZ.pdf">Қазақша</a> · <a href="SUNScool_EN.pdf">English</a></p>
 </div></section>
 
 <section><div class="wrap">
@@ -97,7 +100,7 @@ footer b{color:var(--ink)} a{color:var(--g)}
 <section><div class="wrap">
   <h2>Пилот</h2>
   <div class="steps">
-    <div class="step"><b>Одна школа, начальные классы</b><span>Сервер у учителя + терминалы в классе.</span></div>
+    <div class="step"><b>Одна школа, начальные классы</b><span>Отдельный сервер + место учителя + места учеников.</span></div>
     <div class="step"><b>Отзывы учителей и родителей</b><span>Что помогает, что мешает — правим по ходу.</span></div>
     <div class="step"><b>10 школ</b><span>После пилота — с измеримым результатом.</span></div>
   </div>

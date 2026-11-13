@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SUNSTICK · Aisulu — ваш ИИ без интернета · ИП SUN</title>
+<meta name="description" content="SUNSTICK: локальная ИИ-помощница Aisulu на вашем компьютере. Без интернета и облака. Русский, казахский, английский.">
+<style>
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#faf7f2;color:#231a14;line-height:1.5}
+main{max-width:640px;margin:auto;padding:22px}
+h1{font-size:1.9em;margin:.2em 0 .1em}.sub{color:#7a5a3a;margin:0 0 1em}
+.card{background:#fff;border:1px solid #eadfce;border-radius:14px;padding:16px 18px;margin:14px 0}
+ol,ul{padding-left:1.2em;margin:.3em 0}li{margin:.25em 0}
+label{display:block;margin:.6em 0 .2em;font-weight:600}
+input,textarea{width:100%;box-sizing:border-box;padding:10px;border:1px solid #d9cbb6;border-radius:8px;font:inherit}
+.chk{display:flex;gap:8px;align-items:flex-start;font-weight:400}.chk input{width:auto;margin-top:4px}
+button,.btn{display:inline-block;background:#c8642b;color:#fff;border:0;border-radius:10px;padding:12px 18px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none}
+.btn.alt{background:#fff;color:#c8642b;border:2px solid #c8642b}
+#msg{margin-top:10px;font-weight:600}.qr{text-align:center}.qr img{width:170px}
+small{color:#8a7a6a}
+</style></head><body><main>
+<h1>SUNSTICK · Aisulu</h1>
+<p class="sub">Ваш ИИ-помощник, который живёт на вашем компьютере. Без интернета. Ваши данные никуда не уходят.</p>
+
+<div class="card"><b>Что умеет</b><ul>
+<li>Отвечает на вопросы на русском, казахском и английском</li>
+<li>Понимает картинки и документы, переводит, пишет тексты</li>
+<li>Аудио и видео → текст, текст → голос</li></ul></div>
+
+<div class="card"><b>Как получить</b><ol>
+<li>Регистрация — форма ниже</li>
+<li>Оплата через Kaspi — пришлём реквизиты</li>
+<li>Подтверждение оплаты</li>
+<li>Ссылка на скачивание (≈18,5 ГБ) + удалённая установка 1 час + 30 дней поддержки</li></ol></div>
+
+<div class="card"><b>Требования к компьютеру</b><ul>
+<li><b>Рекомендуем:</b> Windows 10/11 64-бит, NVIDIA RTX 12 ГБ видеопамяти, 32 ГБ ОЗУ, 60 ГБ свободно на SSD — ответ за секунды</li>
+<li><b>Минимум:</b> Windows 10/11 64-бит, 16 ГБ ОЗУ без видеокарты — работает медленно (ответ до минуты)</li></ul>
+<p><a class="btn alt" href="SUNSTICK_Instrukciya_RU.pdf" download>Скачать инструкцию (PDF)</a></p></div>
+
+<div class="card" id="reg"><b>Регистрация</b>
+<form id="f">
+<label>Имя</label><input name="name" required maxlength="80">
+<label>Телефон / WhatsApp / Telegram</label><input name="contact" maxlength="120">
+<label>E-mail (сюда придёт ссылка)</label><input name="email" type="email" maxlength="120">
+<label>Ваш компьютер (если знаете: ОЗУ, видеокарта)</label><textarea name="pc" rows="2" maxlength="300"></textarea>
+<label class="chk"><input type="checkbox" name="consent" required> Согласен на обработку данных для связи по заказу. Данные не передаём третьим лицам.</label>
+<p><button type="submit">Зарегистрироваться</button></p>
+<div id="msg"></div></form></div>
+
+<p><small>Aisulu — ИИ, не человек, и может ошибаться: важное проверяйте. Не является медицинской, юридической или финансовой консультацией. Модель Gemma 4 (Google DeepMind, Apache 2.0), среда Ollama (MIT).</small></p>
+<div class="qr"><img src="qr_sunstick.png" alt="QR этой страницы"><br><small>galymzhan.kz/sunstick · ИП SUN · Астана</small></div>
+</main>
+<script>
+document.getElementById('f').addEventListener('submit',async e=>{e.preventDefault();
+const fd=new FormData(e.target),m=document.getElementById('msg');
+const d={name:fd.get('name'),contact:fd.get('contact'),email:fd.get('email'),pc:fd.get('pc'),consent:!!fd.get('consent'),src:new URLSearchParams(location.search).get('src')||'web'};
+if(!d.contact&&!d.email){m.textContent='Укажите телефон или e-mail';return}
+m.textContent='Отправляем…';
+try{const r=await fetch('https://api.sun-agi.com/reg/sunstick',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+const j=await r.json(); if(j.ok){m.textContent='Готово! Ваш номер заявки: '+j.id+'. Мы свяжемся для оплаты.';e.target.reset()}else{m.textContent=j.err||'Ошибка, попробуйте ещё раз'}}
+catch(x){m.textContent='Нет связи с сервером. Попробуйте позже.'}});
+</script></body></html>

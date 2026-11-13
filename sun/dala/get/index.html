@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dala Üni · скачать по ключу · ИП SUN</title><meta name="robots" content="noindex">
+<style>body{margin:0;font-family:system-ui,Segoe UI,sans-serif;background:#faf7f2;color:#231a14;line-height:1.5}
+main{max-width:560px;margin:auto;padding:22px}.card{background:#fff;border:1px solid #eadfce;border-radius:14px;padding:16px 18px;margin:14px 0}
+input{width:100%;box-sizing:border-box;padding:12px;border:1px solid #d9cbb6;border-radius:8px;font:inherit;font-size:1.1em;letter-spacing:.05em}
+button,.btn{display:inline-block;background:#c8642b;color:#fff;border:0;border-radius:10px;padding:12px 18px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;margin-top:10px}
+#msg{margin-top:12px}small{color:#8a7a6a}</style></head><body><main>
+<h1>Dala Üni · Download / Скачать</h1>
+<div class="card"><p>Paste the license key from your Gumroad receipt — you get a download link (valid 72 h, up to 3 times).<br><small>Введите ключ из письма Gumroad или ключ SUN-XXXX-XXXX после оплаты Kaspi.</small></p>
+<form id="f"><input name="key" placeholder="XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX" required maxlength="64" autocomplete="off">
+<button type="submit">Получить ссылку</button></form><div id="msg"></div></div>
+<div class="card"><b>Важно</b><ul>
+<li>Файл ≈18,5 ГБ (архив .tar). Нужен стабильный интернет; загрузку можно продолжить после обрыва.</li>
+<li>Ссылка действует 72 часа. Один ключ — до 3 ссылок.</li>
+<li>После скачивания: распакуйте архив и запустите <b>INSTALL.cmd</b>. Или дождитесь удалённой установки — мы поможем.</li></ul>
+<a class="btn" style="background:#fff;color:#c8642b;border:2px solid #c8642b" href="../Dala Üni_Instrukciya_RU.pdf" download>Инструкция (PDF)</a></div>
+<p><small>ИП SUN · Астана · <a href="../">galymzhan.kz/sun/dala</a></small></p></main>
+<script>
+document.getElementById('f').addEventListener('submit',async e=>{e.preventDefault();const m=document.getElementById('msg');
+const key=new FormData(e.target).get('key').trim();m.textContent='Проверяем ключ…';
+try{const r=await fetch('https://api.sun-agi.com/reg/dala/get',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key})});
+const j=await r.json();if(j.ok){m.innerHTML='Key accepted / Ключ принят. <a class="btn" href="'+j.url+'">Download Dala Üni (77 MB)</a><br><small>Ссылка действует 72 часа. Осталось выдач по ключу: '+j.left+'</small>'}
+else{m.textContent=j.err||'Ошибка'}}catch(x){m.textContent='Нет связи с сервером, попробуйте позже.'}});
+</script></body></html>

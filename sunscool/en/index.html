@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (GA4 G-BW6E6GRGG8) -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-WQ4TXTZ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SUNScool · AI in the classroom, no internet</title>
+<meta name="description" content="SUNScool — local AI for Kazakhstan's schools: a dedicated server in the school, a teacher seat and student seats. Kazakh and Russian. School data stays in the school.">
+<link rel="canonical" href="https://galymzhan.kz/sunscool/">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7faf8;--ink:#14201b;--mute:#56645e;--line:#dfe8e3;--g:#1f8a5b;--g2:#f2a516;--deep:#0f2a20}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;font-size:17px}
+.wrap{max-width:980px;margin:0 auto;padding:0 22px}
+header{background:var(--deep);color:#fff;padding:60px 0 54px;position:relative;overflow:hidden}
+header:after{content:"";position:absolute;right:-110px;top:-110px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,var(--g2) 0%,#e0611a 45%,transparent 70%);opacity:.5}
+.tag{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#7fe0b0;font-weight:600;margin-bottom:16px;position:relative;z-index:1}
+.tag a{color:inherit;text-decoration:none}
+h1{font-size:clamp(34px,6vw,56px);line-height:1.08;font-weight:800;max-width:720px;position:relative;z-index:1}
+h1 span{color:var(--g2)}
+header p{color:#c7d6cf;font-size:19px;max-width:640px;margin-top:18px;position:relative;z-index:1}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;position:relative;z-index:1}
+.pill{border:1px solid #2d4a3e;border-radius:99px;padding:7px 14px;font-size:14px;color:#e2ece7}
+section{padding:52px 0;border-bottom:1px solid var(--line)}
+h2{font-size:28px;font-weight:700;margin-bottom:8px}
+.lead{color:var(--mute);margin-bottom:26px;max-width:680px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.card h3{font-size:19px;margin-bottom:6px}
+.card .k{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--g);font-weight:600;margin-bottom:8px}
+.card p,.card li{color:var(--mute);font-size:15.5px}
+.card ul{padding-left:18px;margin-top:8px}
+.scheme{display:grid;grid-template-columns:1fr 44px 1fr 44px 1fr;align-items:center;gap:10px}
+.node{background:#fff;border:2px solid var(--g);border-radius:16px;padding:20px}
+.node.dark{border-color:var(--deep)}
+.node b{display:block;font-size:18px;margin-bottom:6px}
+.node span{color:var(--mute);font-size:15px}
+.arrow{text-align:center;font-size:28px;color:var(--g)}
+.steps{counter-reset:s;display:grid;gap:12px}
+.step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 18px 18px 64px;position:relative}
+.step:before{counter-increment:s;content:counter(s);position:absolute;left:18px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--g);color:#fff;display:grid;place-items:center;font-weight:700}
+.step b{display:block}.step span{color:var(--mute);font-size:15.5px}
+.status{display:inline-block;margin-top:10px;font-size:13px;padding:4px 10px;border-radius:99px;background:#fff4e2;color:#a3610a;font-weight:600}
+footer{padding:40px 0 56px;color:var(--mute);font-size:15px}
+footer b{color:var(--ink)} a{color:var(--g)}
+@media(max-width:640px){.scheme{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="tag"><a href="/">← galymzhan.kz</a> · <a href="/sun/">SUN</a> · Education · <a href="../">Рус</a> · <a href="../kz/">Қаз</a> · <b>Eng</b></div>
+  <h1>SUN<span>S</span>cool — AI in the classroom, no internet</h1>
+  <p>The school's own artificial intelligence: the server stays in the school, students use the AI on their own computers, and children's questions and answers never leave for the internet.</p>
+  <div class="pills">
+    <span class="pill">Қазақша · Русский</span>
+    <span class="pill">Runs on the school network</span>
+    <span class="pill">The teacher runs the class</span>
+    <span class="pill">School data stays in school</span>
+  </div>
+</div></header>
+
+<section><div class="wrap">
+  <h2>How it works</h2>
+  <p class="lead">One installer, three roles. At install you choose: 1 — Server, 2 — Teacher seat, 3 — Student seat.</p>
+  <div class="scheme">
+    <div class="node"><b>Student seat</b><span>A student's computer. No model installed — it connects to the server. Kids mode: the lesson only, no outside websites.</span></div>
+    <div class="arrow">⇄</div>
+    <div class="node dark"><b>SUNScool server</b><span>A dedicated computer in the server room or the computer lab. The AI model runs here. Switched on before lessons start.</span></div>
+    <div class="arrow">⇄</div>
+    <div class="node"><b>Teacher seat</b><span>The teacher's computer. No model installed — it connects to the server. Helps prepare lessons, tasks and explanations.</span></div>
+  </div>
+  <p style="margin-top:18px">Brochure (PDF): <a href="../SUNScool_EN.pdf">English</a> · <a href="../SUNScool_KZ.pdf">Қазақша</a> · <a href="../SUNScool_RU.pdf">Русский</a></p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Who it is for</h2>
+  <div class="grid">
+    <div class="card"><div class="k">Students</div><h3>A helper in the lesson</h3><p>Explains a topic in plain words in Kazakh or Russian, checks understanding, helps with texts. Kids mode: lesson tasks only, no outside websites.</p></div>
+    <div class="card"><div class="k">Teachers</div><h3>Class panel</h3><p>Tasks, lesson progress, what students asked. The teacher decides when the AI is on. For lesson prep the teacher has an AI helper of their own.</p></div>
+    <div class="card"><div class="k">Schools</div><h3>No cloud, no per-student subscriptions</h3><p>One server per school. Children's personal data never leaves the school — as Kazakhstan's personal data law requires.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Safety</h2>
+  <div class="grid">
+    <div class="card"><h3>Separate networks</h3><p>Student computers and the teacher's workplace are kept apart.</p></div>
+    <div class="card"><h3>AI label</h3><p>AI-made texts are labelled — as Kazakhstan's AI law requires.</p></div>
+    <div class="card"><h3>The teacher decides</h3><p>The AI helps but never grades or decides for the teacher.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Pilot</h2>
+  <div class="steps">
+    <div class="step"><b>One school, primary grades</b><span>Dedicated server + teacher seat + student seats.</span></div>
+    <div class="step"><b>Feedback from teachers and parents</b><span>What helps, what gets in the way — we fix as we go.</span></div>
+    <div class="step"><b>10 schools</b><span>After the pilot — with measurable results.</span></div>
+  </div>
+  <span class="status">Pilot in preparation · 2026</span>
+</div></section>
+
+<footer><div class="wrap">
+  <p><b>SUNScool</b> — a product of SUN AGI LLP (registration in progress) · IE SUN · Astana · <a href="/sun/">all SUN products</a> · <a href="https://sun-agi.com">sun-agi.com</a></p>
+  <p style="margin-top:6px">Khamzin Bauyrzhan Galymzhanovich &amp; Aisun</p>
+</div></footer>
+</body>
+</html>

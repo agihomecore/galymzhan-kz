@@ -34,6 +34,16 @@ small{color:#8a7a6a}
 <li><b>Минимум:</b> Windows 10/11 64-бит, 16 ГБ ОЗУ без видеокарты — работает медленно (ответ до минуты)</li></ul>
 <p><a class="btn alt" href="SUNSTICK_Instrukciya_RU.pdf" download>Скачать инструкцию (PDF)</a></p></div>
 
+<div class="card" id="video" hidden><b>Посмотрите за 30 секунд</b><video controls playsinline preload="none" style="width:100%;border-radius:10px;margin-top:8px" src="sunstick_reel.mp4"></video></div>
+
+<div class="card"><b>Подробнее</b>
+<p><b>Почему локально.</b> Обычные чат-боты отправляют ваши вопросы и файлы на чужие серверы. Aisulu работает целиком на вашем компьютере: договоры, отчёты, фото документов и переписка никуда не уходят. Интернет не нужен даже для работы.</p>
+<p><b>Что внутри.</b> Модель Gemma 4 от Google DeepMind (лицензия Apache 2.0) — понимает текст и картинки, говорит по-русски, по-казахски и по-английски. Среда Ollama (MIT). Наша оболочка Aisulu: чаты по проектам, папка документов, озвучка ответов мужским или женским голосом.</p>
+<p><b>Для работы.</b> Перевести письмо, разобрать скриншот, составить ответ клиенту, кратко пересказать документ, сделать текст из записи совещания или видео, озвучить текст.</p>
+<p><b>Встроенные инструменты SunMCP.</b> Aisulu может сама прочитать ваши документы в своей папке, посмотреть время, подсказать по открытому окну. Окна банков, Kaspi и паролей закрыты защитой. Любое действие на экране — только после вашего «Согласен», есть кнопка-ручник ⛔.</p>
+<p><b>Установка.</b> 15–30 минут, сама. Или мы установим удалённо за час. 30 дней поддержки входят в покупку.</p>
+<p><b>Честно.</b> Без видеокарты ответы медленные — до минуты. Aisulu может ошибаться: важные решения проверяйте.</p></div>
+
 <div class="card" id="reg"><b>Регистрация</b>
 <form id="f">
 <label>Имя</label><input name="name" required maxlength="80">
@@ -56,4 +66,5 @@ m.textContent='Отправляем…';
 try{const r=await fetch('https://api.sun-agi.com/reg/sunstick',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
 const j=await r.json(); if(j.ok){m.textContent='Готово! Ваш номер заявки: '+j.id+'. Мы свяжемся для оплаты.';e.target.reset()}else{m.textContent=j.err||'Ошибка, попробуйте ещё раз'}}
 catch(x){m.textContent='Нет связи с сервером. Попробуйте позже.'}});
+fetch('sunstick_reel.mp4',{method:'HEAD'}).then(r=>{if(r.ok)document.getElementById('video').hidden=false}).catch(()=>{});
 </script></body></html>

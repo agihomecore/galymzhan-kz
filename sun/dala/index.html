@@ -19,4 +19,21 @@ audio{width:100%}.buy{display:block;text-align:center;background:#f14635;color:#
 <p id="en"><b>How to get it:</b> pay via Kaspi, send the receipt to our bot and get the files instantly. Outside Kazakhstan — Gumroad (soon).</p>
 <p><a class="buy" style="background:#2aa3df" href="https://t.me/DalaUni_bot" id="bot">@DalaUni_bot: чек → файлы</a></p>
 <p><small>MP3 · M4R (iPhone) · OGG (Android). Музыка оригинальная: Khamzin Bauyrzhan Galymzhanovich и AISun · ИП SUN, Астана.</small></p>
+<script>window.LEAD_CODE="DU";window.LEAD_PRODUCT="Dala uni"</script>
+<section id="talk" style="background:rgba(255,255,255,.06);border-radius:14px;padding:16px;margin:24px 0">
+<h2 style="margin-top:0">Хотите поговорить?</h2>
+<p>Оставьте имя и телефон — Бауржан перезвонит или напишет в WhatsApp. Обычно в тот же день (10:00–21:00, Астана).</p>
+<form id="leadf" style="display:grid;gap:8px">
+<input name="name" placeholder="Имя" required style="padding:10px;border-radius:8px;border:0">
+<input name="contact" placeholder="Телефон / WhatsApp" required inputmode="tel" style="padding:10px;border-radius:8px;border:0">
+<input name="want" placeholder="Что хотите? (купить, установить, для офиса, вопрос…)" style="padding:10px;border-radius:8px;border:0">
+<label style="font-size:.9em"><input type="checkbox" name="consent" required> Согласен, чтобы со мной связались</label>
+<button style="padding:12px;border:0;border-radius:10px;background:#f5a623;font-weight:700;font-size:1.05em">Перезвоните мне</button>
+<div id="leadmsg"></div></form></section>
+<script>(function(){const f=document.getElementById('leadf');const q=new URLSearchParams(location.search);
+f.addEventListener('submit',async e=>{e.preventDefault();const d=Object.fromEntries(new FormData(f));d.consent=!!d.consent;
+d.src=(q.get('src')||q.get('ref')||'')?(window.LEAD_CODE+'-'+(q.get('src')||q.get('ref'))):window.LEAD_CODE+'-web';d.product=window.LEAD_PRODUCT;d.lang='ru';
+const m=document.getElementById('leadmsg');m.textContent='Отправляю…';
+try{const r=await fetch('https://api.sun-agi.com/reg/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});const j=await r.json();
+m.textContent=j.ok?('Готово! Номер заявки '+j.id+'. Скоро свяжемся.'):('Ошибка: '+(j.err||r.status));if(j.ok)f.reset();}catch(x){m.textContent='Нет связи. Попробуйте ещё раз.'}});})();</script>
 </main></body></html>

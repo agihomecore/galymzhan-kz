@@ -99,4 +99,5 @@ try{const r=await fetch('https://api.sun-agi.com/reg/sunstick',{method:'POST',he
 const j=await r.json(); if(j.ok){m.textContent='Готово! Ваш номер заявки: '+j.id+'. Мы свяжемся для оплаты.';e.target.reset()}else{m.textContent=j.err||'Ошибка, попробуйте ещё раз'}}
 catch(x){m.textContent='Нет связи с сервером. Попробуйте позже.'}});
 fetch('sunstick_reel.mp4',{method:'HEAD'}).then(r=>{if(r.ok)document.getElementById('video').hidden=false}).catch(()=>{});
-</script></body></html>
+</script><script>(function(){try{var q=new URLSearchParams(location.search);(new Image()).src="https://api.sun-agi.com/px.gif?p="+encodeURIComponent(location.pathname)+"&src="+encodeURIComponent(q.get("src")||q.get("ref")||"")+"&r="+encodeURIComponent(document.referrer.split("/")[2]||"")+"&t="+Date.now()}catch(e){}})();</script>
+</body></html>
